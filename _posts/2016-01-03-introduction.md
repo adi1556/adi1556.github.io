@@ -20,7 +20,7 @@ WTWY is resource conscious and asked us to use MTA traffic data and come up with
 
 We downloaded the data from MTA's site from April 2018 till June 2018. 
 
-## Data Cleaning:
+### Data Cleaning:
 
 * There was no unique identifier for a specific turnstile and hence we used Control Area name, remote unit ID station, SCP(specific address for a given device) and Station to come up with a unique identifier
 * The values were cumulative over time and hence we aggregated the data using the difference of maximum and minimum value to get turnstile entries for every day per station 
@@ -34,16 +34,14 @@ We downloaded the data from MTA's site from April 2018 till June 2018.
 
 We were able to see that 3.7% of the stations were responsible for 22.3% of the total people going through turnstiles. We shortlisted top 10 stations by traffic to do our further analysis. Top 10 stations were spread across Central Manhattan as was expected.
 
-![alt_text](http://zwmiller.com/projects/images/monte_carlo/part5/business_impact.png)
-![alt_text](http://zwmiller.com/projects/images/monte_carlo/part5/business_impact.png)
-![alt_text](http://zwmiller.com/projects/images/monte_carlo/part5/business_impact.png)
+![Image test]({{ site.url }}/images/BarPlotBenson.png)
 
 
-## Adding Foursquare Data to MTA Data
+### Adding Foursquare Data to MTA Data
 
 A lot of traffic doesn't necessitate that people are interested in your cause. We wanted to target most of our workforce where we might find potential populace who might be interested in attending the gala. We focused on affluent women as they tend to be more open to the cause of WTWY. We shortlisted potential points of interest(POI) from Foursquare check-in data. Using Euclidean distance POIs were defined in a radius of 1 mile of each station. 
 
-## Ranking Based on Resource Allocation Scheme 
+### Ranking Based on Resource Allocation Scheme 
 
 Stations were ranked initially based on entries through each turnstile. When we ranked the stations on basis of nearby POIs, ranking changed drastically. We wanted both of these features in our final resource allocation scheme. We calculated percentages of each feature; % of entries through a station per week and percentage of POIs nearby a station. We took arithmetic mean of both of these features to come up with a metric which can be used for resource allocation towards stations. 
 
